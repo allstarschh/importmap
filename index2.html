@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>importmap example</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "simple" : "./module_simpleExport.js"
+        }
+      }
+    </script>
+    <script>
+      var result;
+
+      function testLoaded() {
+        alert("result="+result);
+      }
+    </script>
+    <script type="module" src="module_simpleImportMap.js"></script>
+  </head>
+  <body onload='testLoaded()'>
+  </body>
+</html>
+
