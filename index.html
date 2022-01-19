@@ -16,11 +16,10 @@
     <script defer src="https://unpkg.com/github-corner"></script>
     <script type="module">
       import XMarked from 'x-marked';
-      import { TwitterButton, FacebookButton } from 'social-button';
+      import { TwitterButton } from 'social-button';
 
       customElements.define('x-marked', XMarked);
       customElements.define('twitter-button', TwitterButton);
-      customElements.define('facebook-button', FacebookButton);
     </script>
   </head>
   <body>
@@ -28,8 +27,9 @@
       <a href="https://github.com/allstarschh/importmap">GitHub</a>
     </github-corner>
     <x-marked highlight class="container">
-      Hello world
-      <twitter-button type="follow" width="220" height="30" user="1000ch"></twitter-button>
+# Hello world
+Import map test
+<twitter-button type="follow" width="220" height="30" user="allstarsch"></twitter-button>
     </x-marked>
   </body>
 </html>
