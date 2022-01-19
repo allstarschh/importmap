@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>importmap-sandbox</title>
+    <link rel="stylesheet" href="https://1000ch.github.io/gh-pages.css/gh-pages.css">
+    <script defer src="https://unpkg.com/github-corner"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "x-marked": "https://unpkg.com/x-marked",
+          "social-button": "https://unpkg.com/social-button"
+        }
+      }
+    </script>
+    <script type="module">
+      import XMarked from 'x-marked';
+      import { TwitterButton, FacebookButton } from 'social-button';
+
+      customElements.define('x-marked', XMarked);
+      customElements.define('twitter-button', TwitterButton);
+      customElements.define('facebook-button', FacebookButton);
+    </script>
+  </head>
+  <body>
+    <github-corner>
+      <a href="https://github.com/1000ch/importmap-sandbox">GitHub</a>
+    </github-corner>
+    <x-marked highlight class="container">
+# importmap-sandbox
+
+> [Import maps](https://wicg.github.io/import-maps/) allow web pages to control the behavior of JavaScript imports.
+
+Import maps is implemented on [Chromium 74~ experimentaly](https://caniuse.com/import-maps), so you have to enable **Experimental Web Platform features** flag on `chrome://flags/#enable-experimental-web-platform-features` if you want to try it.
+
+```html
+<script type="importmap">
+  {
+    "imports": {
+      "x-marked": "https://unpkg.com/x-marked",
+      "social-button": "https://unpkg.com/social-button"
+    }
+  }
+</script>
+<script type="module">
+  import XMarked from 'x-marked';
+  import { TwitterButton, FacebookButton } from 'social-button';
+
+  customElements.define('x-marked', XMarked);
+  customElements.define('twitter-button', TwitterButton);
+  customElements.define('facebook-button', FacebookButton);
+</script>
+<twitter-button type="follow" width="220" height="30" user="1000ch"></twitter-button>
+```
+
+<twitter-button type="follow" width="220" height="30" user="1000ch"></twitter-button>
+    </x-marked>
+  </body>
+</html>
