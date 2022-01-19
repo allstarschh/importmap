@@ -6,8 +6,30 @@
     <title>importmap example</title>
     <link rel="stylesheet" href="https://allstarschh.github.io/gh-pages.css/gh-pages.css">
     <script defer src="https://unpkg.com/github-corner"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "x-marked": "https://unpkg.com/x-marked",
+          "social-button": "https://unpkg.com/social-button"
+        }
+      }
+    </script>
+    <script type="module">
+      import XMarked from 'x-marked';
+      import { TwitterButton, FacebookButton } from 'social-button';
+
+      customElements.define('x-marked', XMarked);
+      customElements.define('twitter-button', TwitterButton);
+      customElements.define('facebook-button', FacebookButton);
+    </script>
   </head>
   <body>
     Hello world
+    <github-corner>
+      <a href="https://github.com/allstarschh/importmap">GitHub</a>
+    </github-corner>
+    <x-marked highlight class="container">
+      <twitter-button type="follow" width="220" height="30" user="allstarschh"></twitter-button>
+    </x-marked>
   </body>
 </html>
