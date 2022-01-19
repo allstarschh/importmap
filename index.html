@@ -7,48 +7,20 @@
     <script type="importmap">
       {
         "imports": {
-          "x-marked": "https://unpkg.com/x-marked",
-          "social-button": "https://unpkg.com/social-button"
+          "simple" : "./module_simpleExport.js"
         }
       }
     </script>
-    <script defer src="https://unpkg.com/github-corner"></script>
-    <script type="module">
-      import XMarked from 'x-marked';
-      import { TwitterButton } from 'social-button';
+    <script>
+      var result;
 
-      customElements.define('x-marked', XMarked);
-      customElements.define('twitter-button', TwitterButton);
+      function testLoaded() {
+        alert("result="+result);
+      }
     </script>
+    <script type="module" src="module_simpleImportMap.js"></script>
   </head>
-  <body>
-    <github-corner>
-      <a href="https://github.com/allstarschh/importmap">GitHub</a>
-    </github-corner>
-    <x-marked highlight class="container">
-# Hello world
-Import map test
-```html
-<script type="importmap">
-  {
-    "imports": {
-      "x-marked": "https://unpkg.com/x-marked",
-      "social-button": "https://unpkg.com/social-button"
-    }
-  }
-</script>
-<script defer src="https://unpkg.com/github-corner"></script>
-<script type="module">
-  import XMarked from 'x-marked';
-  import { TwitterButton } from 'social-button';
-
-  customElements.define('x-marked', XMarked);
-  customElements.define('twitter-button', TwitterButton);
-</script>
-<twitter-button type="follow" width="220" height="30" user="allstarsch"></twitter-button>
-```
-
-<twitter-button type="follow" width="220" height="30" user="allstarsch"></twitter-button>
-    </x-marked>
+  <body onload='testLoaded()'>
   </body>
 </html>
+
