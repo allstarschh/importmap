@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <title>importmap example</title>
     <link rel="stylesheet" href="https://1000ch.github.io/gh-pages.css/gh-pages.css">
-    <script defer src="https://unpkg.com/github-corner"></script>
     <script type="importmap">
       {
         "imports": {
@@ -14,6 +13,7 @@
         }
       }
     </script>
+    <script defer src="https://unpkg.com/github-corner"></script>
     <script type="module">
       import XMarked from 'x-marked';
       import { TwitterButton, FacebookButton } from 'social-button';
@@ -24,11 +24,11 @@
     </script>
   </head>
   <body>
-    Hello world
     <github-corner>
       <a href="https://github.com/allstarschh/importmap">GitHub</a>
     </github-corner>
     <x-marked highlight class="container">
+      Hello world
       <twitter-button type="follow" width="220" height="30" user="allstarschh"></twitter-button>
     </x-marked>
   </body>
