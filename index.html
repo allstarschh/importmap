@@ -29,6 +29,26 @@
     <x-marked highlight class="container">
 # Hello world
 Import map test
+```html
+<script type="importmap">
+  {
+    "imports": {
+      "x-marked": "https://unpkg.com/x-marked",
+      "social-button": "https://unpkg.com/social-button"
+    }
+  }
+</script>
+<script defer src="https://unpkg.com/github-corner"></script>
+<script type="module">
+  import XMarked from 'x-marked';
+  import { TwitterButton } from 'social-button';
+
+  customElements.define('x-marked', XMarked);
+  customElements.define('twitter-button', TwitterButton);
+</script>
+<twitter-button type="follow" width="220" height="30" user="allstarsch"></twitter-button>
+```
+
 <twitter-button type="follow" width="220" height="30" user="allstarsch"></twitter-button>
     </x-marked>
   </body>
