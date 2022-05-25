@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>simple importmap example</title>
+  </head>
+  <body onload="onLoaded()">
+  <script type="importmap">
+    {
+      "imports" : {
+        "simple": "./module_simpleExport.js"
+      }
+    }
+  </script>
+
+  <script type="module">
+    import { x } from "simple";
+    result3 = x;
+  </script>
+
+  <script type="module" src="module_simple.js"></script>
+  <script>
+    var result, result2, result3;
+    import("./module_simpleImportMap.js").then((m) => {
+      console.log("result="+result);
+      console.log("m.foo="+m.foo);
+      console.log("result3="+result3);
+    }).catch(err => {
+      console.log("error :"+err);
+    });
+
+  function onLoaded() {
+    console.log("onLoaded, result2="+result2);
+  }
+  </script>
+  </body>
+</html>
+
+
