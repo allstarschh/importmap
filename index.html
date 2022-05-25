@@ -9,22 +9,27 @@
         "imports": {
           "simple" : "./module_simpleExport.js",
           "dir/": "./",
-          "./remap.js" : "./module_simpleExport.js"
-        }
+          "./remap.js" : "./module_simpleExport.js",
+          "": "empty specifier key",
+          "valIsNumber":1,
+          "valIsEmpty": "",
+          "valIsInvalid": "invalid address.",
+          "dir2/": "./not_ending_with_slash"
+        },
+        "invalidKey" : "Import Map should have only 'imports' and 'scopes'"
       }
     </script>
     <script>
       var result, result2, result3;
-
       function check(value, result, expected) {
-        document.write(`load ${value} result=${result} expected:${expected}`);
+        document.getElementById("log").innerHTML+= `load ${value} result=${result} expected:${expected}`;
         if (result != expected) {
-          document.write("   <p style='color:red'>FAILED</p>");
+          document.getElementById("log").innerHTML+= "<p style='color:red'>FAILED</p>";
         }
-        document.write("<br>");
+        document.getElementById("log").innerHTML+= "<br>";
       }
-
       function testLoaded() {
+        console.log("testLoaded result="+result);
         check("simple", result, 42);
         check("dir/module_simpleExport.js", result2, 43);
         check("./remap.js", result3, 44);
@@ -35,6 +40,8 @@
     <script type="module" src="module_simpleImportMap3.js"></script>
   </head>
   <body onload='testLoaded()'>
+    Hello world
+    <p id="log"></p>
   </body>
 </html>
 
