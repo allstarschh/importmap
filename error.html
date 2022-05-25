@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>importmap error example</title>
+    <script>
+      function scriptError(e) {
+        console.log("script erorr");
+        document.getElementById("log").innerHTML+= "<p style='color:red'>SCRIPT ERROR</p>";
+      }
+    </script>
+  </head>
+  <body>
+    <p id="log"></p>
+    <script type="importmap" onerror="scriptError()" >
+      Parse Error
+    </script>
+  </body>
+</html>
