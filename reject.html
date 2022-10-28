@@ -3,9 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <title>simple importmap example</title>
+    <title>importmap should be rejected as there's a dynmamic import call before it</title>
   </head>
   <body onload="onLoaded()">
+  <script>
+    import("./module_simpleExport.js").then((m) => {
+      console.log("m.x="+m.x);
+    })
+  </script>
   <script type="importmap">
     {
       "imports" : {
@@ -24,7 +29,6 @@
     var result, result2, result3;
     import("./module_simpleImportMap.js").then((m) => {
       console.log("result="+result);
-      console.log("result2="+result2);
       console.log("m.foo="+m.foo);
       console.log("result3="+result3);
     }).catch(err => {
