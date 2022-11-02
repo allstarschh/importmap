@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Javascript Import-maps is enabled in Firefox 108"
-date: 2022-10-25 00:00:00 -0000
+date: 2022-11-01 00:00:00 -0000
 categories: import-maps
 ---
 
