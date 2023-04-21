@@ -8,6 +8,14 @@
   <body onload="onLoaded()">
   <script type="importmap">
     {
+      "imports" : {{
+        "simple": "./module_simpleExport.js"
+      }
+    }
+  </script>
+
+  <script type="importmap" onerror="onError()">
+    {
       "imports" : {
         "simple": "./module_simpleExport.js"
       }
@@ -19,9 +27,10 @@
     result3 = x;
   </script>
 
-  <script type="module" src="module_simple.js"></script>
+<!--  <script type="module" src="module_simple.js"></script>-->
   <script>
     var result, result2, result3;
+    /*
     import("./module_simpleImportMap.js").then((m) => {
       console.log("result="+result);
       console.log("result2="+result2);
@@ -30,9 +39,13 @@
     }).catch(err => {
       console.log("error :"+err);
     });
-
+*/
   function onLoaded() {
     console.log("onLoaded, result2="+result2);
+  }
+
+  function onError() {
+    console.log("onError");
   }
   </script>
   </body>
